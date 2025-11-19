@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>情绪小怪兽 Mood Monster</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <h1>情绪小怪兽 Mood Monster</h1>
+
+      <div class="monster-container">
+        <!-- 小怪兽 SVG，可以之后慢慢美化 -->
+        <svg
+          class="monster"
+          viewBox="0 0 200 200"
+        >
+          <!-- 身体 -->
+          <circle
+            cx="100"
+            cy="100"
+            r="70"
+            class="body"
+          />
+
+          <!-- 眼睛 -->
+          <circle
+            cx="75"
+            cy="85"
+            r="8"
+            class="eye eye-left"
+          />
+          <circle
+            cx="125"
+            cy="85"
+            r="8"
+            class="eye eye-right"
+          />
+
+          <!-- 嘴巴：用几种嘴形，靠 CSS 控制显示/隐藏 -->
+          <path
+            class="mouth mouth-happy"
+            d="M70 120 Q100 145 130 120"
+          />
+          <path
+            class="mouth mouth-angry"
+            d="M70 130 Q100 110 130 130"
+          />
+          <line
+            class="mouth mouth-bored"
+            x1="75"
+            y1="125"
+            x2="125"
+            y2="125"
+          />
+          <path
+            class="mouth mouth-sleepy"
+            d="M80 130 Q100 135 120 130"
+          />
+
+          <!-- 困/睡觉的小眼线 -->
+          <line
+            class="sleep-line"
+            x1="70"
+            y1="80"
+            x2="85"
+            y2="90"
+          />
+          <line
+            class="sleep-line"
+            x1="115"
+            y1="90"
+            x2="130"
+            y2="80"
+          />
+        </svg>
+      </div>
+
+      <div class="buttons">
+        <button data-mood="happy">开心 😊</button>
+        <button data-mood="angry">生气 😡</button>
+        <button data-mood="sleepy">困 🥱</button>
+        <button data-mood="bored">无聊 🙃</button>
+      </div>
+
+      <p class="hint">点点按钮，看小怪兽的表情变化～</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

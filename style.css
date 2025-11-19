@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f6f6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+.monster-container {
+  margin: 16px auto 24px;
+}
+
+.monster {
+  width: 220px;
+  height: 220px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* 基础样式 */
+.body {
+  fill: #8bc5ff;
+}
+
+.eye {
+  fill: #222;
+}
+
+.mouth {
+  stroke: #222;
+  stroke-width: 4;
+  fill: none;
+  display: none; /* 默认全部隐藏，靠状态控制 */
+}
+
+.sleep-line {
+  stroke: #222;
+  stroke-width: 3;
+  display: none;
+}
+
+/* 状态：开心 */
+.monster-happy .body {
+  fill: #ffd36f;
+}
+
+.monster-happy .mouth-happy {
+  display: block;
+}
+
+.monster-happy {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* 状态：生气 */
+.monster-angry .body {
+  fill: #ff8b8b;
+  filter: drop-shadow(0 0 10px rgba(255, 80, 80, 0.5));
+}
+
+.monster-angry .mouth-angry {
+  display: block;
+}
+
+/* 状态：困 */
+.monster-sleepy .body {
+  fill: #b8a7ff;
+}
+
+.monster-sleepy .mouth-sleepy {
+  display: block;
+}
+
+.monster-sleepy .sleep-line {
+  display: block;
+}
+
+/* 状态：无聊 */
+.monster-bored .body {
+  fill: #b0e4d1;
+}
+
+.monster-bored .mouth-bored {
+  display: block;
+}
+
+/* 按钮样式 */
+.buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+}
+
+.hint {
+  color: #777;
+  font-size: 13px;
+}
